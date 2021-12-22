@@ -1,0 +1,27 @@
+def sentinel_search(arr, x):
+    size = len(arr)
+    arr.append(x)
+    i = 0
+    while(arr[i] != x):
+        i += 1
+    if(i == size):
+        return None
+    else:
+        return i
+
+# Function call
+arr=[]
+l=int(input("Enter Number of Elements in array : "))
+print("*  Enter Elements in random order.")
+for i in range(l):
+  n1=int(input("Enter Elements : "))
+  arr.append(n1)      
+print("Array : ",arr)    
+while True:
+  x = int(input("Enter Number to be Searched : "))
+  result = sentinel_search(arr, x)
+  if result != None:
+	  print("Element is present at index", str(result))
+  else:
+    break
+print("Element is not present in array")
