@@ -1,0 +1,22 @@
+def linear_search(arr, x):
+    for i in range(len(arr)):
+        if arr[i] == x:
+            return i
+    return -1
+
+# Function call
+arr=[]
+l=int(input("Enter Number of Elements in array : "))
+print("*  Enter Elements in random order.")
+for i in range(l):
+  n1=int(input("Enter Elements : "))
+  arr.append(n1)      
+print("Array : ",arr)    
+while True:
+  x = int(input("Enter Number to be Searched : "))
+  result = linear_search(arr, x)
+  if result != -1:
+	  print("Element is present at index", str(result))
+  else:
+    break
+print("Element is not present in array")
