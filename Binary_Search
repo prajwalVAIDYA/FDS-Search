@@ -1,0 +1,35 @@
+def binary_search(arr, x):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+    while low <= high:
+        mid = (high + low) // 2
+
+        # If x is greater, ignore left half
+        if arr[mid] < x:
+            low = mid + 1
+        # If x is smaller, ignore right half
+        elif arr[mid] > x:
+            high = mid - 1
+        # means x is present at mid
+        else:
+            return mid
+    # If we reach here, then the element was not present
+    return -1
+  
+# Function call
+arr=[]
+l=int(input("Enter Number of Elements in array : "))
+print("*  Enter Elements in sorted order.")
+for i in range(l):
+  n1=int(input("Enter Elements : "))
+  arr.append(n1)  
+print("Array : ",arr)    
+while True:
+  x = int(input("Enter Number to be Searched : "))
+  result = binary_search(arr, x)
+  if result != -1:
+	  print("Element is present at index", str(result))
+  else:
+    break
+print("Element is not present in array")    
